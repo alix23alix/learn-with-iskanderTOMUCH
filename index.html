@@ -41,7 +41,35 @@
     
     <section id="about">
         <h2>À propos</h2>
-        <p>Learn with Iskander est une plateforme dédiée à l'apprentissage de l'électronique et de la cryptographie.</p>
+        <p>Depuis le début du projet, plusieurs étapes ont été réalisées :
+1/ Recherche bibliographique
+    • Une étude approfondie des architectures matérielles de chiffrement pour l’IoT a été menée.
+    • Les avantages et inconvénients des solutions existantes ont été analysés pour sélectionner les algorithmes les plus adaptés.
+    • Une comparaison entre AES et RSA a été effectuée pour déterminer leur applicabilité aux systèmes embarqués à ressources limitées.
+2/ Choix des algorithmes
+    • AES-128 a été retenu pour le chiffrement symétrique en raison de son efficacité et de sa faible consommation en ressources.
+    • RSA (1024 bits) a été choisi pour le chiffrement asymétrique, équilibrant sécurité et performances pour les communications sécurisées.
+3/  Mise en place de l’environnement de développement
+    • Installation et configuration de Vivado 2024.2 pour la simulation et la synthèse du code VHDL.
+    • Création de l’architecture matérielle nécessaire pour l’implémentation des deux algorithmes.
+4/  Implémentation de AES
+    • Module KeyExpansion : Génération des clés de tour (Round Keys) implémentée et testée.
+    • Module de chiffrement : Développement des transformations SubBytes, ShiftRows, MixColumns et AddRoundKey.
+    • Tests de simulation : Validation du fonctionnement du chiffrement AES et optimisation des performances sur FPGA.
+5/ Implémentation de RSA
+    • 5_1Génération des clés :
+        ◦ Génération de nombres premiers pseudo-aléatoires.
+        ◦ Calcul de n = p × q et de φ(n) = (p-1) × (q-1).
+        ◦ Sélection de l’exposant public e et calcul de d avec l’algorithme d’Euclide étendu.
+    • 5_2    Module de chiffrement :
+        ◦ Implémentation de l’exponentiation modulaire C = M^e mod n.
+        ◦ Optimisation des performances et test de la consommation des ressources FPGA.
+6 / Prochaines étapes
+    • Finalisation de l’implémentation AES : Intégration complète du chiffrement et tests finaux.
+    • Implémentation du module de déchiffrement RSA : Calcul de M = C^d mod n et validation du processus.
+    • Optimisation des performances : Réduction de la consommation en ressources et amélioration des temps de calcul.
+    • Simulation et validation finale sur FPGA pour assurer la fiabilité et la sécurité des deux algorithmes.
+</p>
     </section>
     
    <!DOCTYPE html>
